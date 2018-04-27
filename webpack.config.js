@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebPack = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -7,7 +8,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.[hash].js'
     },
     resolve: {
         extensions: ['.js', '.ts']
@@ -26,5 +27,21 @@ module.exports = {
     },
     stats: {
         warnings: false
-      }
+    },
+    plugins: [
+        new HtmlWebPack({
+            template: path.join(__dirname, 'src/index.html'),
+            public: '/'
+        }),
+        new webpack.DefinePlugin({
+            env: JSON.stringify(process.env.NODE_ENV)
+        }),
+    ],
+    devServer: {
+        port: 4310,
+        host: '0.0.0.0',
+        inline: true,
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, 'build')
+    }
 };
