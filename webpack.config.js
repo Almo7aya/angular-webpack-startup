@@ -8,7 +8,8 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.[hash].js'
+        filename: 'bundle.[hash].js',
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.ts']
@@ -20,10 +21,18 @@ module.exports = {
             use: {
                 loader: 'ts-loader',
                 options: {
-                    transpileOnly: true
-                }
-            }
+                    // transpileOnly: true
+                },
+            },
+            exclude: /(node_modules)/,
         }]
+    },
+    devServer: {
+        port: 4310,
+        contentBase: path.join(__dirname, 'build'),
+        host: '0.0.0.0',
+        inline: true,
+        historyApiFallback: true,
     },
     stats: {
         warnings: false
@@ -36,12 +45,5 @@ module.exports = {
         new webpack.DefinePlugin({
             env: JSON.stringify(process.env.NODE_ENV)
         }),
-    ],
-    devServer: {
-        port: 4310,
-        host: '0.0.0.0',
-        inline: true,
-        historyApiFallback: true,
-        contentBase: path.join(__dirname, 'build')
-    }
+    ]
 };

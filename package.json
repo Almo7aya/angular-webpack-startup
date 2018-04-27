@@ -2,7 +2,7 @@
   "name": "angular-webpack-startup",
   "version": "1.0.0",
   "scripts": {
-    "serve": "webpack-dev-server --config webpack.config.js --progress --open",
+    "serve": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js --progress -p"
   },
   "repository": "https://github.com/Almo7aya/angular-webpack-startup.git",
