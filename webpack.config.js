@@ -14,11 +14,17 @@ module.exports = {
     },
     mode: "development",
     module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loader: 'ts-loader'
+        rules: [{
+            test: /\.ts$/,
+            use: {
+                loader: 'awesome-typescript-loader',
+                options: {
+                    transpileOnly: true
+                }
             }
-        ]
-    }
+        }]
+    },
+    stats: {
+        warnings: false
+      }
 };
