@@ -2,17 +2,22 @@
   "name": "angular-webpack-startup",
   "version": "1.0.0",
   "scripts": {
-    "serve": "webpack --config webpack.config.js"
+    "serve": "webpack --config webpack.config.js --watch --progress --profile"
   },
   "repository": "https://github.com/Almo7aya/angular-webpack-startup.git",
   "author": "Ali Almohaya <AliAlmohaya@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@angular/animations": "^5.2.10",
     "@angular/common": "^5.2.10",
     "@angular/compiler": "^5.2.10",
     "@angular/core": "^5.2.10",
     "@angular/platform-browser": "^5.2.10",
     "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/platform-server": "^5.2.10",
+    "@angular/upgrade": "^5.2.10",
+    "awesome-typescript-loader": "^5.0.0",
+    "core-js": "^2.5.5",
     "rxjs": "5.5.0",
     "ts-loader": "^4.2.0",
     "typescript": "^2.8.3",
