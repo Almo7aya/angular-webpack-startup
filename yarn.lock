@@ -8,6 +8,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/compiler@^5.2.10":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.2.10.tgz#1cd9914436f0707957823531c4418ce5b7e6a130"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/core@^5.2.10":
   version "5.2.10"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.10.tgz#a6eba06cae7267efbd2666e3fa5e42b84c2261de"
